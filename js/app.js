@@ -1,3 +1,7 @@
+// <!-- Sam Goldberg
+// 11/7/26
+// Week 2 assignment -->
+
 const singerTable = document.getElementById("singerTable");
 const remixTable = document.getElementById("remixTable");
 //The fetch statements use a promise to return either the table data or an error saying the
