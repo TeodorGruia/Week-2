@@ -1,6 +1,7 @@
 // <!-- Sam Goldberg
 // 11/7/26
-// Week 2 assignment -->
+// Week 2 assignment 
+// "Favorite Singers" JSON and Bootstrap-->
 
 const singerTable = document.getElementById("singerTable");
 const remixTable = document.getElementById("remixTable");
@@ -16,8 +17,10 @@ fetch("singers.json")
     }
     return response.json();
   })
+  //This build the table but does not inject the data from the JSON file
   .then((singers) => {
     let rowSinger = "";
+    
     singers.forEach((singer) => {
       rowSinger += `
                 <tr>
@@ -40,9 +43,8 @@ fetch("remixes.json")
     }
     return response.json();
   })
+  //This build the table but does not inject the data from the JSON file
   .then((remixes) => {
-    //This is the Boostrap table being built. At this point, the table hasn't
-    //been inserted into the webpage.
     let rowRemix = "";
     remixes.forEach((remix) => {
       rowRemix += `
@@ -52,7 +54,7 @@ fetch("remixes.json")
                     <td>${remix.Year}</td>
                 </tr>`;
     });
-
+    //The injection of data into the Remixer table
     remixTable.innerHTML = rowRemix;
   })
   .catch((error) => {
